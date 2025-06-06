@@ -1,37 +1,52 @@
-# ai-housing-predictor
-# 🏠 AI Housing Price Predictor
+# 🏠 Housing Price Prediction – Enkla AI-modellen i Python
 
-Ett enkelt AI-projekt där vi tränar en modell för att förutsäga bostadspriser baserat på antal rum och kvadratmeter.
+Detta projekt är en introduktion till maskininlärning (ML) och visar hur man bygger en **linjär regressionsmodell** för att förutsäga bostadspriser baserat på två faktorer:
 
----
+- 📐 Bostadens storlek i kvadratmeter  
+- 🛏️ Antal rum
 
-## 🚀 Projektmål
-
-- Förstå grunderna i maskininlärning (ML)
-- Använda verklig tabell-data (CSV)
-- Träna en `LinearRegression`-modell
-- Testa modellen med ny input
+Projektet är byggt i **Google Colab** och använder klassiska Python-bibliotek för ML och visualisering.
 
 ---
 
-## 📁 Projektstruktur
+## 🚀 Teknik & Bibliotek
 
-```bash
-ai-housing-predictor/
-├── data/
-│   └── housing.csv
-├── src/
-│   └── train_model.py
-├── model.pkl
-├── README.md
-└── LICENSE
+- `numpy` – för att hantera numeriska arrayer
+- `scikit-learn` – för att bygga och träna ML-modellen
+- `matplotlib` – för att visualisera resultatet (valfritt)
 
-🔧 Använda projektet
-	1.	Installera pandas, scikit-learn, joblib
-	2.	Kör train_model.py
-	3.	Testresultat skrivs ut i terminalen
+---
 
-🔢 Exempel
-test = [[3, 70]]
-prediction = model.predict(test)
-print(f'Förväntat pris: {int(prediction[0]):,} kr')
+## 📈 Modellen
+
+Vi använder `LinearRegression` från `scikit-learn`:
+
+```python
+from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+model.fit(X, y)
+
+Inmatningsdata (X) består av kvadratmeter och antal rum. Utdata (y) är det faktiska priset (i tusentals kronor).
+
+⸻
+
+🔍 Exempel på förutsägelse
+
+new_apartment = np.array([[70, 3]])
+predicted_price = model.predict(new_apartment)
+print(predicted_price)
+
+---
+
+💡 Varför det här projektet?
+
+Detta är mitt första AI-projekt och ett steg mot att bli AI Engineer.
+Fokus ligger på att förstå grunderna i datainmatning, modellträning och förutsägelser.
+
+⸻
+
+📂 Struktur
+
+📁 housing-price-prediction/
+├── housing_prediction.ipynb    # Google Colab-notebook
+└── README.md
